@@ -1,0 +1,54 @@
+% Part: lambda-calculus
+% Chapter: introduction
+% Section: abbreviated-syntax
+
+\documentclass[../../../include/open-logic-section]{subfiles}
+
+\begin{document}
+
+\olfileid{lc}{int}{abb}
+\olsection{Abbreviated Syntax}
+
+Since term is just a written version of the formation, and the terms
+defined in \olref[lc][int][syn]{def} are cumbersome, we may invent another more concise version, as
+long as each of its terms describes a unique formation. One
+widely used version called \emph{abbreviated terms} is shown as
+follows, in the form of expansion rules from the abbreviated terms to the (cumbersome) terms.
+
+\begin{enumerate}
+\item When parentheses are left out, application takes place from left
+  to right. For example, if $M$, $N$, $P$, and $Q$ are terms, then
+  $MNPQ$ abbreviates $(((MN)P)Q)$.
+\item Again, when parentheses are left out, lambda abstraction is to
+  be given the widest scope possible. From example, $\lambd[x][MNP]$ is
+  read $\lambd[x][(MNP)]$.
+\item A lambda can be used to abstract multiple variables. For
+  example, $\lambd[xyz][M]$ is short for
+  $\lambd[x][\lambd[y][\lambd[z][M]]]$.
+\end{enumerate}
+
+For example,
+\[
+\lambd[xy][xxyx \lambd[z][xz]]
+\]
+abbreviates
+\[
+(\lambd[x][(\lambd[y][((((xx)y)x)(\lambd[z][(xz)]))])]).
+\]
+
+\begin{prob}
+  Expand this abbreviated term: $\lambd[g][(\lambd[x][g (x x)]) \lambd[x][g (x x)]]$.
+\end{prob}
+
+\begin{prob}
+  Prove the unique readability of abbreviated terms as we did for
+  cumbersome terms in \olref[unq]{prop:unq}.
+\end{prob}
+
+We can now think of abbreviated terms, cumbersome terms and
+formation trees as the same
+thing. We will only use the abbreviated terms in the rest of the
+text, since it is the most compact, and when we say ``terms'' we mean
+abbreviated ones.
+
+\end{document}
